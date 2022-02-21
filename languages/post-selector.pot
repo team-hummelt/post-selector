@@ -1,0 +1,418 @@
+# Copyright (C) 2022 Jens Wiecker
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-Post-Selector 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/post-selector\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-02-19T21:25:47+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: post-selector\n"
+
+#. Plugin Name of the plugin
+msgid "WP-Post-Selector"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://www.hummelt-werbeagentur.de/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Auswahl von Beiträgen im Gutenberg-Block Editor mit verschiedenen Ausgabeoptionen."
+msgstr ""
+
+#. Author of the plugin
+msgid "Jens Wiecker"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://wwdh.de"
+msgstr ""
+
+#: admin/class-post-selector-admin.php:83
+#: admin/class-post-selector-admin.php:84
+msgid "Post-Selector 2"
+msgstr ""
+
+#: admin/partials/post-selector-admin-display.php:20
+#: admin/partials/post-selector-admin-display.php:24
+#: admin/partials/post-selector-admin-display.php:94
+msgid "Post Selector"
+msgstr ""
+
+#: admin/partials/post-selector-admin-display.php:25
+msgid "Overview"
+msgstr ""
+
+#: admin/partials/post-selector-admin-display.php:30
+#: admin/partials/post-selector-admin-display.php:37
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:93
+#: admin/gutenberg/post-selector-data/src/index.js:447
+msgid "Slider"
+msgstr ""
+
+#: admin/partials/post-selector-admin-display.php:40
+#: admin/partials/post-selector-admin-display.php:46
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/components/galerieTypes.js:58
+msgid "Gallery"
+msgstr ""
+
+#: admin/partials/post-selector-admin-display.php:49
+#: admin/partials/post-selector-admin-display.php:55
+#: admin/partials/post-selector-admin-display.php:94
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/index.js:100
+msgid "Settings"
+msgstr ""
+
+#: admin/partials/post-selector-admin-display.php:67
+msgid "Post Selector Slider"
+msgstr ""
+
+#: admin/partials/post-selector-admin-display.php:101
+msgid "Minimum requirement for using this Plugin"
+msgstr ""
+
+#: admin/partials/post-selector-admin-display.php:110
+msgid "User Role"
+msgstr ""
+
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/components/galerieTypes.js:58
+#: admin/gutenberg/galerie-data/src/components/galerieTypes.js:61
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/CatSelect.js:43
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:97
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:111
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:125
+msgid "select"
+msgstr ""
+
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/components/galerieTypes.js:63
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/CatSelect.js:45
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:99
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:113
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:127
+msgid "loading"
+msgstr ""
+
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/index.js:31
+msgid "Post selector 2 gallery"
+msgstr ""
+
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/index.js:104
+msgid "Headline for widget:"
+msgstr ""
+
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/index.js:108
+msgid "Relevant for Gutenberg widgets only."
+msgstr ""
+
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/index.js:117
+msgid "Colors for hover box"
+msgstr ""
+
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/index.js:121
+msgid "Hover text color"
+msgstr ""
+
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/index.js:131
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:657
+msgid "Hover background color"
+msgstr ""
+
+#: admin/gutenberg/galerie-data/build/index.js:1
+#: admin/gutenberg/galerie-data/src/index.js:145
+msgid "Post selector 2 gallery "
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostList.js:14
+msgid "Loading posts"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostList.js:20
+msgid "Your query yielded no results, please try again."
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostList.js:28
+msgid "Your query yielded no results, please try again., please try again."
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostList.js:34
+msgid "no posts selected"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostList.js:43
+msgid "Loading"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostList.js:43
+msgid "load more"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostSelector.js:290
+msgid "Close selection"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostSelector.js:290
+#: admin/gutenberg/post-selector-data/src/components/PostSelector.js:323
+msgid "Add contributions"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostSelector.js:296
+msgid "Post Type"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostSelector.js:307
+msgid "Search contribution"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostSelector.js:313
+msgid "Please enter your search query..."
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/PostSelector.js:339
+msgid "selected posts"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/CatSelect.js:39
+msgid "Select category"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:93
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:107
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:121
+msgid "Select template:"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:107
+#: admin/gutenberg/post-selector-data/src/index.js:448
+msgid "Grid"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/components/hupaData.js:121
+#: admin/gutenberg/post-selector-data/src/index.js:449
+msgid "News"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:39
+msgid "Post Selector 2"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:148
+msgid " gutenberg post selector BY Jens Wiecker"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:412
+msgid "Output Settings"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:427
+msgid "Number of posts:"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:434
+msgid "Only relevant for category selection."
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:439
+msgid "Output type"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:470
+msgid "Issue order"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:478
+msgid "Position"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:479
+msgid "Date"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:486
+msgid "Sort"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:508
+msgid "View"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:512
+msgid "Show link to post"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:517
+msgid "Show post title"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:522
+msgid "post title link (to post)"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:527
+msgid "Show post image"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:533
+msgid "Lightbox active"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:540
+msgid "Image Link"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:548
+msgid "Image"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:549
+msgid "attachment"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:550
+msgid "extra url"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:558
+msgid "Extra url only relevant for news selection."
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:567
+msgid "News settings"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:571
+msgid "Show categories"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:576
+msgid "Show author"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:581
+msgid "Show date"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:588
+msgid "Link in new window"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:593
+msgid "Only relevant for extra url."
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:599
+msgid "Output content"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:608
+msgid "Excerpt"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:609
+msgid "Content"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:610
+msgid "Empty"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:620
+msgid "News Pagination"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:623
+msgid "Pagination active"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:629
+msgid "Number of posts per page:"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:635
+msgid "Only relevant for output type News."
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:643
+msgid "Colors"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:647
+msgid "Text color"
+msgstr ""
+
+#: admin/gutenberg/post-selector-data/build/index.js:1
+#: admin/gutenberg/post-selector-data/src/index.js:673
+msgid "Select posts"
+msgstr ""
