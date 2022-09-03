@@ -338,6 +338,26 @@ class Post_Selector_Data {
 		return $postArr;
 	}
 
+    /**
+     * @param $postArr
+     * @param $value
+     * @param $order
+     *
+     * @return array|mixed
+     */
+    private function order_by_args_string($postArr,$value, $order) {
+
+        switch ($order){
+            case'1':
+                usort($postArr, fn ($a, $b) => strcasecmp($a[$value] , $b[$value]));
+                return  array_reverse($postArr);
+            case '2':
+                usort($postArr, fn ($a, $b) => strcasecmp($a[$value] , $b[$value]));
+                break;
+        }
+        return $postArr;
+    }
+
 	/**
 	 * @param $query
 	 * @param false $attr
