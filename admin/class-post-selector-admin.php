@@ -84,7 +84,7 @@ class Post_Selector_Admin {
 			get_option('ps_two_user_role'),
 			'post-selector-two-settings',
 			array( $this, 'admin_post_selector_two_settings_page' ),
-			apply_filters($this->basename.'/ps2_svg_icons','sign-post',true,true), 7
+			self::get_svg_icons('signpost-2'), 103
 		);
 
 		add_action( 'load-' . $hook_suffix, array( $this, 'post_selector_two_load_ajax_admin_options_script' ) );
@@ -279,7 +279,7 @@ class Post_Selector_Admin {
 
 		wp_enqueue_script( 'jquery' );
 		//TODO FontAwesome / Bootstrap
-		wp_enqueue_style( 'post-selector-admin-two-bs-style', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, false );
+		wp_enqueue_style( 'hupa-starter-admin-bs-style', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, false );
 		// TODO ADMIN ICONS
 		wp_enqueue_style( 'post-selector-two-admin-icons-style', plugin_dir_url( __FILE__ ) . 'css/font-awesome.css', array(), $this->version, false );
 		// TODO DASHBOARD STYLES
@@ -293,7 +293,7 @@ class Post_Selector_Admin {
 			array(), $this->version );
 
 		//TODO Bootstrap
-		wp_enqueue_script( 'post-selector-two-bs',
+		wp_enqueue_script( 'hupa-hupa-starter-bs',
 			plugins_url($this->basename) . '/public/js/bs/bootstrap.bundle.min.js', array(),
 			$this->version, true );
 
@@ -326,4 +326,23 @@ class Post_Selector_Admin {
 		wp_enqueue_script( 'post-selector-two-script', plugin_dir_url( __FILE__ ) . 'js/post-selector-admin.js', array('jquery'), $this->version, true );
 	}
 
+    /**
+     * @param $name
+     *
+     * @return string
+     */
+    protected static function get_svg_icons($name): string
+    {
+        $icon = '';
+        switch ($name) {
+            case'signpost-2':
+                $icon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-signpost-2" viewBox="0 0 16 16">
+                         <path d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z"/>
+                         </svg>';
+                break;
+            default:
+        }
+        return 'data:image/svg+xml;base64,' . base64_encode($icon);
+
+    }
 }

@@ -13,7 +13,8 @@
  * @subpackage Post_Selector/includes
  */
 
-use Hupa\License\Register_Product_License;
+use PostSelector\License\Register_Api_WP_Remote;
+use PostSelector\License\Register_Product_License;
 use Post\Selector\Post_Selector_Callback;
 use Post\Selector\Post_Selector_Data;
 use Post\Selector\Post_Selector_Database_Handle;
@@ -22,6 +23,7 @@ use Post\Selector\Post_Selector_Helper;
 use Post\Selector\Post_Selector_News_Template;
 use Post\Selector\Post_Selector_Slider;
 use Post\Selector\Register_Post_Selector_Endpoint;
+
 
 
 /**
@@ -214,7 +216,7 @@ class Post_Selector {
 		 * // JOB The class responsible for defining all actions that occur in the license area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/license/class_register_product_license.php';
-
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/license/admin/class_register_api_wp_remote.php';
 
 
 		/**
@@ -301,6 +303,9 @@ class Post_Selector {
 		if(!get_option('hupa_server_url')){
 			update_option('hupa_server_url', $this->get_license_config()->api_server_url);
 		}
+
+        global $wpRemoteLicense;
+        $wpRemoteLicense = new Register_Api_WP_Remote($this->get_plugin_name(), $this->get_version(), $this->get_license_config(), $this->main);
 		global $product_license;
 		$product_license = new Register_Product_License( $this->get_plugin_name(), $this->get_version(), $this->get_license_config(), $this->main );
 		$this->loader->add_action( 'init', $product_license, 'license_site_trigger_check' );

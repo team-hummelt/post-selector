@@ -1,6 +1,6 @@
 <?php
 
-namespace Hupa\License;
+namespace PostSelector\License;
 
 use Post_Selector;
 
@@ -154,6 +154,8 @@ class Register_Product_License {
 	private function load_license_dependencies(): void {
 		require_once 'admin/class_register_exec_license.php';
 		require_once 'admin/class_register_api_wp_remote.php';
+
+
 	}
 
 	private function register_license_wp_remote() {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Hupa\License;
+namespace PostSelector\License;
 
 use Post_Selector;
 use stdClass;
@@ -143,7 +143,9 @@ class Register_License_Ajax {
 				update_option( "{$this->basename}_client_id", $client_id );
 				update_option( "{$this->basename}_client_secret", $client_secret );
 				$responseJson->status = true;
-				$responseJson->send_url = apply_filters('get_license_api_urls', 'authorize_url');
+                global $wpRemoteLicense;
+                $responseJson->send_url = $wpRemoteLicense->hupa_license_api_urls('authorize_url');
+				//$responseJson->send_url = apply_filters('get_license_api_urls', 'authorize_url');
 				$responseJson->if_authorize = get_option("{$this->basename}_product_install_authorize");
 				break;
 		}

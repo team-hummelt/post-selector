@@ -1,6 +1,6 @@
 <?php
 
-namespace Hupa\License;
+namespace PostSelector\License;
 
 use Post_Selector;
 
