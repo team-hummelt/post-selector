@@ -93,7 +93,7 @@ class Post_Selector_Admin_Ajax {
 		$this->method     = '';
 		if ( isset( $_POST['daten'] ) ) {
 			$this->data   = $_POST['daten'];
-			$this->method = filter_var( $this->data['method'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+			$this->method = filter_var( $this->data['method'], FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
 		}
 
 		if ( ! $this->method ) {
@@ -110,53 +110,53 @@ class Post_Selector_Admin_Ajax {
 		switch ( $this->method ) {
 			case'slider-form-handle';
 
-				$type = filter_input( INPUT_POST, 'type', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$type = filter_input( INPUT_POST, 'type', FILTER_UNSAFE_RAW );
 
 				if ( ! $type ) {
 					$responseJson->msg = 'Ein Fehler ist aufgetreten!';
 
 					return $responseJson;
 				}
-				$bezeichnung = filter_input( INPUT_POST, 'bezeichnung', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$bezeichnung = filter_input( INPUT_POST, 'bezeichnung', FILTER_UNSAFE_RAW );
 
-				$img_size = filter_input( INPUT_POST, 'img_size', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$img_size = filter_input( INPUT_POST, 'img_size', FILTER_UNSAFE_RAW );
 
 				//Input CheckBoxen
-				filter_input( INPUT_POST, 'autoplay', FILTER_SANITIZE_STRING ) ? $autoplay = 1 : $autoplay = 0;
-				filter_input( INPUT_POST, 'cover', FILTER_SANITIZE_STRING ) ? $cover = 1 : $cover = 0;
+				filter_input( INPUT_POST, 'autoplay', FILTER_UNSAFE_RAW ) ? $autoplay = 1 : $autoplay = 0;
+				filter_input( INPUT_POST, 'cover', FILTER_UNSAFE_RAW ) ? $cover = 1 : $cover = 0;
 
-				filter_input( INPUT_POST, 'auto_width', FILTER_SANITIZE_STRING ) ? $auto_width = 1 : $auto_width = 0;
-				filter_input( INPUT_POST, 'auto_height', FILTER_SANITIZE_STRING ) ? $auto_height = 1 : $auto_height = 0;
-				filter_input( INPUT_POST, 'arrows', FILTER_SANITIZE_STRING ) ? $arrows = 1 : $arrows = 0;
+				filter_input( INPUT_POST, 'auto_width', FILTER_UNSAFE_RAW ) ? $auto_width = 1 : $auto_width = 0;
+				filter_input( INPUT_POST, 'auto_height', FILTER_UNSAFE_RAW ) ? $auto_height = 1 : $auto_height = 0;
+				filter_input( INPUT_POST, 'arrows', FILTER_UNSAFE_RAW ) ? $arrows = 1 : $arrows = 0;
 
-				filter_input( INPUT_POST, 'pause_on_hover', FILTER_SANITIZE_STRING ) ? $pause_on_hover = 1 : $pause_on_hover = 0;
-				filter_input( INPUT_POST, 'pause_on_focus', FILTER_SANITIZE_STRING ) ? $pause_on_focus = 1 : $pause_on_focus = 0;
-				filter_input( INPUT_POST, 'drag', FILTER_SANITIZE_STRING ) ? $drag = 1 : $drag = 0;
-				filter_input( INPUT_POST, 'keyboard', FILTER_SANITIZE_STRING ) ? $keyboard = 1 : $keyboard = 0;
+				filter_input( INPUT_POST, 'pause_on_hover', FILTER_UNSAFE_RAW ) ? $pause_on_hover = 1 : $pause_on_hover = 0;
+				filter_input( INPUT_POST, 'pause_on_focus', FILTER_UNSAFE_RAW ) ? $pause_on_focus = 1 : $pause_on_focus = 0;
+				filter_input( INPUT_POST, 'drag', FILTER_UNSAFE_RAW ) ? $drag = 1 : $drag = 0;
+				filter_input( INPUT_POST, 'keyboard', FILTER_UNSAFE_RAW ) ? $keyboard = 1 : $keyboard = 0;
 
-				filter_input( INPUT_POST, 'hover', FILTER_SANITIZE_STRING ) ? $hover = 1 : $hover = 0;
-				filter_input( INPUT_POST, 'label', FILTER_SANITIZE_STRING ) ? $label = 1 : $label = 0;
-				filter_input( INPUT_POST, 'textauszug', FILTER_SANITIZE_STRING ) ? $textauszug = 1 : $textauszug = 0;
+				filter_input( INPUT_POST, 'hover', FILTER_UNSAFE_RAW ) ? $hover = 1 : $hover = 0;
+				filter_input( INPUT_POST, 'label', FILTER_UNSAFE_RAW ) ? $label = 1 : $label = 0;
+				filter_input( INPUT_POST, 'textauszug', FILTER_UNSAFE_RAW ) ? $textauszug = 1 : $textauszug = 0;
 
-				filter_input( INPUT_POST, 'img_link_aktiv', FILTER_SANITIZE_STRING ) ? $img_link_aktiv = 1 : $img_link_aktiv = 0;
+				filter_input( INPUT_POST, 'img_link_aktiv', FILTER_UNSAFE_RAW ) ? $img_link_aktiv = 1 : $img_link_aktiv = 0;
 				$select_design_option = filter_input( INPUT_POST, 'select_design_option', FILTER_VALIDATE_INT );
 				$select_design_btn_link = filter_input( INPUT_POST, 'select_design_btn_link', FILTER_VALIDATE_INT );
-				filter_input( INPUT_POST, 'design_btn_aktiv', FILTER_SANITIZE_STRING ) ? $design_btn_aktiv = 1 : $design_btn_aktiv = 0;
-				$design_btn_txt  = filter_input( INPUT_POST, 'design_btn_txt', FILTER_SANITIZE_STRING);
-				$design_btn_css  = filter_input( INPUT_POST, 'design_btn_css', FILTER_SANITIZE_STRING);
-				$design_link_tag_txt  = filter_input( INPUT_POST, 'design_link_tag_txt', FILTER_SANITIZE_STRING);
-				filter_input( INPUT_POST, 'design_text_aktiv', FILTER_SANITIZE_STRING ) ? $design_text_aktiv = 1 : $design_text_aktiv = 0;
+				filter_input( INPUT_POST, 'design_btn_aktiv', FILTER_UNSAFE_RAW ) ? $design_btn_aktiv = 1 : $design_btn_aktiv = 0;
+				$design_btn_txt  = filter_input( INPUT_POST, 'design_btn_txt', FILTER_UNSAFE_RAW);
+				$design_btn_css  = filter_input( INPUT_POST, 'design_btn_css', FILTER_UNSAFE_RAW);
+				$design_link_tag_txt  = filter_input( INPUT_POST, 'design_link_tag_txt', FILTER_UNSAFE_RAW);
+				filter_input( INPUT_POST, 'design_text_aktiv', FILTER_UNSAFE_RAW ) ? $design_text_aktiv = 1 : $design_text_aktiv = 0;
 				$select_design_text = filter_input( INPUT_POST, 'select_design_text', FILTER_VALIDATE_INT );
-				$design_titel_css  = filter_input( INPUT_POST, 'design_titel_css', FILTER_SANITIZE_STRING);
-				$design_auszug_css  = filter_input( INPUT_POST, 'design_auszug_css', FILTER_SANITIZE_STRING);
+				$design_titel_css  = filter_input( INPUT_POST, 'design_titel_css', FILTER_UNSAFE_RAW);
+				$design_auszug_css  = filter_input( INPUT_POST, 'design_auszug_css', FILTER_UNSAFE_RAW);
 				$select_title_tag = filter_input( INPUT_POST, 'select_title_tag', FILTER_VALIDATE_INT );
 
-				$design_container_height  = filter_input( INPUT_POST, 'design_container_height', FILTER_SANITIZE_STRING);
-				$inner_container_height  = filter_input( INPUT_POST, 'inner_container_height', FILTER_SANITIZE_STRING);
+				$design_container_height  = filter_input( INPUT_POST, 'design_container_height', FILTER_UNSAFE_RAW);
+				$inner_container_height  = filter_input( INPUT_POST, 'inner_container_height', FILTER_UNSAFE_RAW);
 				//inner_container_height
 
 
-				filter_input( INPUT_POST, 'rewind', FILTER_SANITIZE_STRING ) ? $rewind = 1 : $rewind = 0;
+				filter_input( INPUT_POST, 'rewind', FILTER_UNSAFE_RAW ) ? $rewind = 1 : $rewind = 0;
 
 				//Input Breakpoints
 				$pro_page_xs  = filter_input( INPUT_POST, 'pro_page_xs', FILTER_VALIDATE_INT );
@@ -166,52 +166,52 @@ class Post_Selector_Admin_Ajax {
 				$pro_page_xl  = filter_input( INPUT_POST, 'pro_page_xl', FILTER_VALIDATE_INT );
 				$pro_page_xxl = filter_input( INPUT_POST, 'pro_page_xxl', FILTER_VALIDATE_INT );
 
-				$gap_xs  = filter_input( INPUT_POST, 'gap_xs', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$gap_sm  = filter_input( INPUT_POST, 'gap_sm', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$gap_md  = filter_input( INPUT_POST, 'gap_md', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$gap_lg  = filter_input( INPUT_POST, 'gap_lg', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$gap_xl  = filter_input( INPUT_POST, 'gap_xl', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$gap_xxl = filter_input( INPUT_POST, 'gap_xxl', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$gap_xs  = filter_input( INPUT_POST, 'gap_xs', FILTER_UNSAFE_RAW);
+				$gap_sm  = filter_input( INPUT_POST, 'gap_sm', FILTER_UNSAFE_RAW);
+				$gap_md  = filter_input( INPUT_POST, 'gap_md', FILTER_UNSAFE_RAW);
+				$gap_lg  = filter_input( INPUT_POST, 'gap_lg', FILTER_UNSAFE_RAW);
+				$gap_xl  = filter_input( INPUT_POST, 'gap_xl', FILTER_UNSAFE_RAW);
+				$gap_xxl = filter_input( INPUT_POST, 'gap_xxl', FILTER_UNSAFE_RAW );
 
-				$width_xs  = filter_input( INPUT_POST, 'width_xs', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$width_sm  = filter_input( INPUT_POST, 'width_sm', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$width_md  = filter_input( INPUT_POST, 'width_md', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$width_lg  = filter_input( INPUT_POST, 'width_lg', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$width_xl  = filter_input( INPUT_POST, 'width_xl', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$width_xxl = filter_input( INPUT_POST, 'width_xxl', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$width_xs  = filter_input( INPUT_POST, 'width_xs', FILTER_UNSAFE_RAW);
+				$width_sm  = filter_input( INPUT_POST, 'width_sm', FILTER_UNSAFE_RAW);
+				$width_md  = filter_input( INPUT_POST, 'width_md', FILTER_UNSAFE_RAW);
+				$width_lg  = filter_input( INPUT_POST, 'width_lg', FILTER_UNSAFE_RAW);
+				$width_xl  = filter_input( INPUT_POST, 'width_xl', FILTER_UNSAFE_RAW);
+				$width_xxl = filter_input( INPUT_POST, 'width_xxl', FILTER_UNSAFE_RAW );
 
-				$height_xs  = filter_input( INPUT_POST, 'height_xs', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$height_sm  = filter_input( INPUT_POST, 'height_sm', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$height_md  = filter_input( INPUT_POST, 'height_md', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$height_lg  = filter_input( INPUT_POST, 'height_lg', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$height_xl  = filter_input( INPUT_POST, 'height_xl', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$height_xxl = filter_input( INPUT_POST, 'height_xxl', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$height_xs  = filter_input( INPUT_POST, 'height_xs', FILTER_UNSAFE_RAW );
+				$height_sm  = filter_input( INPUT_POST, 'height_sm', FILTER_UNSAFE_RAW );
+				$height_md  = filter_input( INPUT_POST, 'height_md', FILTER_UNSAFE_RAW );
+				$height_lg  = filter_input( INPUT_POST, 'height_lg', FILTER_UNSAFE_RAW );
+				$height_xl  = filter_input( INPUT_POST, 'height_xl', FILTER_UNSAFE_RAW );
+				$height_xxl = filter_input( INPUT_POST, 'height_xxl', FILTER_UNSAFE_RAW );
 
-				$slide_type = filter_input( INPUT_POST, 'slide_type', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$slide_type = filter_input( INPUT_POST, 'slide_type', FILTER_UNSAFE_RAW );
 				$pro_move   = filter_input( INPUT_POST, 'pro_move', FILTER_VALIDATE_INT );
 				$pro_page   = filter_input( INPUT_POST, 'pro_page', FILTER_VALIDATE_INT );
-				$gap        = filter_input( INPUT_POST, 'gap', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$width      = filter_input( INPUT_POST, 'width', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$height     = filter_input( INPUT_POST, 'height', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$gap        = filter_input( INPUT_POST, 'gap', FILTER_UNSAFE_RAW );
+				$width      = filter_input( INPUT_POST, 'width', FILTER_UNSAFE_RAW );
+				$height     = filter_input( INPUT_POST, 'height', FILTER_UNSAFE_RAW );
 				$intervall  = filter_input( INPUT_POST, 'intervall', FILTER_VALIDATE_INT );
-				$focus      = filter_input( INPUT_POST, 'focus', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$focus      = filter_input( INPUT_POST, 'focus', FILTER_UNSAFE_RAW );
 
-				$trim_space   = filter_input( INPUT_POST, 'trim_space', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$lazy_load    = filter_input( INPUT_POST, 'lazy_load', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$trim_space   = filter_input( INPUT_POST, 'trim_space', FILTER_UNSAFE_RAW );
+				$lazy_load    = filter_input( INPUT_POST, 'lazy_load', FILTER_UNSAFE_RAW );
 				$speed        = filter_input( INPUT_POST, 'speed', FILTER_VALIDATE_INT );
 				$rewind_speed = filter_input( INPUT_POST, 'rewind_speed', FILTER_VALIDATE_INT );
 
-				$fixed_width  = filter_input( INPUT_POST, 'fixed_width', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$fixed_height = filter_input( INPUT_POST, 'fixed_height', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$fixed_width  = filter_input( INPUT_POST, 'fixed_width', FILTER_UNSAFE_RAW );
+				$fixed_height = filter_input( INPUT_POST, 'fixed_height', FILTER_UNSAFE_RAW );
 
-				$height_ratio = filter_input( INPUT_POST, 'height_ratio', FILTER_SANITIZE_STRING );
+				$height_ratio = filter_input( INPUT_POST, 'height_ratio', FILTER_UNSAFE_RAW );
 				$start_index  = filter_input( INPUT_POST, 'start_index', FILTER_SANITIZE_NUMBER_INT );
 
 				$flick_power   = filter_input( INPUT_POST, 'flick_power', FILTER_SANITIZE_NUMBER_INT );
 				$preload_pages = filter_input( INPUT_POST, 'preload_pages', FILTER_SANITIZE_NUMBER_INT );
 
-				filter_input( INPUT_POST, 'pagination', FILTER_SANITIZE_STRING ) ? $pagination = 1 : $pagination = 0;
-				filter_input( INPUT_POST, 'slide_focus', FILTER_SANITIZE_STRING ) ? $slide_focus = 1 : $slide_focus = 0;
+				filter_input( INPUT_POST, 'pagination', FILTER_UNSAFE_RAW ) ? $pagination = 1 : $pagination = 0;
+				filter_input( INPUT_POST, 'slide_focus', FILTER_UNSAFE_RAW ) ? $slide_focus = 1 : $slide_focus = 0;
 
 				$demo_type = filter_input( INPUT_POST, 'demo_type', FILTER_SANITIZE_NUMBER_INT );
 
@@ -345,29 +345,29 @@ class Post_Selector_Admin_Ajax {
 
 			case'post_galerie_handle':
 
-				$type = filter_input( INPUT_POST, 'type', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$bezeichnung = filter_input( INPUT_POST, 'bezeichnung', FILTER_SANITIZE_STRING );
-				$beschreibung = filter_input( INPUT_POST, 'beschreibung', FILTER_SANITIZE_STRING );
-				$record->animate_select = filter_input( INPUT_POST, 'animate_select', FILTER_SANITIZE_STRING );
+				$type = filter_input( INPUT_POST, 'type', FILTER_UNSAFE_RAW );
+				$bezeichnung = filter_input( INPUT_POST, 'bezeichnung', FILTER_UNSAFE_RAW );
+				$beschreibung = filter_input( INPUT_POST, 'beschreibung', FILTER_UNSAFE_RAW );
+				$record->animate_select = filter_input( INPUT_POST, 'animate_select', FILTER_UNSAFE_RAW );
 				$record->type   = filter_input( INPUT_POST, 'galerie_type', FILTER_VALIDATE_INT );
-				$link = filter_input( INPUT_POST, 'link', FILTER_SANITIZE_STRING);
+				$link = filter_input( INPUT_POST, 'link', FILTER_UNSAFE_RAW);
 				$url = filter_input(INPUT_POST, "url", FILTER_VALIDATE_URL);
 
-				filter_input(INPUT_POST, 'show_bezeichnung', FILTER_SANITIZE_STRING) ? $record->show_bezeichnung = true : $record->show_bezeichnung = false;
-				filter_input(INPUT_POST, 'show_beschreibung', FILTER_SANITIZE_STRING) ? $record->show_beschreibung = true : $record->show_beschreibung = false;
+				filter_input(INPUT_POST, 'show_bezeichnung', FILTER_UNSAFE_RAW) ? $record->show_bezeichnung = true : $record->show_bezeichnung = false;
+				filter_input(INPUT_POST, 'show_beschreibung', FILTER_UNSAFE_RAW) ? $record->show_beschreibung = true : $record->show_beschreibung = false;
 
-				filter_input(INPUT_POST, 'hover_aktiv', FILTER_SANITIZE_STRING) ? $record->hover_aktiv = true : $record->hover_aktiv = false;
-				filter_input(INPUT_POST, 'hover_title_aktiv', FILTER_SANITIZE_STRING) ? $record->hover_title_aktiv = true : $record->hover_title_aktiv = false;
-				filter_input(INPUT_POST, 'hover_beschreibung_aktiv', FILTER_SANITIZE_STRING) ? $record->hover_beschreibung_aktiv = true : $record->hover_beschreibung_aktiv = false;
-				filter_input(INPUT_POST, 'lightbox_aktiv', FILTER_SANITIZE_STRING) ? $record->lightbox_aktiv = true : $record->lightbox_aktiv = false;
-				filter_input(INPUT_POST, 'caption_aktiv', FILTER_SANITIZE_STRING) ? $record->caption_aktiv = true : $record->caption_aktiv = false;
+				filter_input(INPUT_POST, 'hover_aktiv', FILTER_UNSAFE_RAW) ? $record->hover_aktiv = true : $record->hover_aktiv = false;
+				filter_input(INPUT_POST, 'hover_title_aktiv', FILTER_UNSAFE_RAW) ? $record->hover_title_aktiv = true : $record->hover_title_aktiv = false;
+				filter_input(INPUT_POST, 'hover_beschreibung_aktiv', FILTER_UNSAFE_RAW) ? $record->hover_beschreibung_aktiv = true : $record->hover_beschreibung_aktiv = false;
+				filter_input(INPUT_POST, 'lightbox_aktiv', FILTER_UNSAFE_RAW) ? $record->lightbox_aktiv = true : $record->lightbox_aktiv = false;
+				filter_input(INPUT_POST, 'caption_aktiv', FILTER_UNSAFE_RAW) ? $record->caption_aktiv = true : $record->caption_aktiv = false;
 
-				filter_input(INPUT_POST, 'lazy_load_aktiv', FILTER_SANITIZE_STRING) ? $record->lazy_load_aktiv = true : $record->lazy_load_aktiv = false;
-				filter_input(INPUT_POST, 'lazy_load_ani_aktiv', FILTER_SANITIZE_STRING) ? $record->lazy_load_ani_aktiv = true : $record->lazy_load_ani_aktiv = false;
+				filter_input(INPUT_POST, 'lazy_load_aktiv', FILTER_UNSAFE_RAW) ? $record->lazy_load_aktiv = true : $record->lazy_load_aktiv = false;
+				filter_input(INPUT_POST, 'lazy_load_ani_aktiv', FILTER_UNSAFE_RAW) ? $record->lazy_load_ani_aktiv = true : $record->lazy_load_ani_aktiv = false;
 
-				filter_input(INPUT_POST, 'link_target', FILTER_SANITIZE_STRING) ? $record->link_target = true : $record->link_target = false;
+				filter_input(INPUT_POST, 'link_target', FILTER_UNSAFE_RAW) ? $record->link_target = true : $record->link_target = false;
 
-				$img_size = filter_input( INPUT_POST, 'image_size', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$img_size = filter_input( INPUT_POST, 'image_size', FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
 
 				$record->is_link = false;
 				if($url){
@@ -399,24 +399,24 @@ class Post_Selector_Admin_Ajax {
 						];
 						break;
 					case'2':
-						filter_input(INPUT_POST, 'galerie_crop_aktiv', FILTER_SANITIZE_STRING) ? $galerie_crop_aktiv = true : $galerie_crop_aktiv = false;
+						filter_input(INPUT_POST, 'galerie_crop_aktiv', FILTER_UNSAFE_RAW) ? $galerie_crop_aktiv = true : $galerie_crop_aktiv = false;
 						$img_width   = filter_input( INPUT_POST, 'img_width', FILTER_VALIDATE_INT );
 						$img_height   = filter_input( INPUT_POST, 'img_height', FILTER_VALIDATE_INT );
 
-						$xl_grid_column = filter_input( INPUT_POST, 'xl_grid_column', FILTER_SANITIZE_STRING);
-						$xl_grid_gutter = filter_input( INPUT_POST, 'xl_grid_gutter', FILTER_SANITIZE_STRING);
+						$xl_grid_column = filter_input( INPUT_POST, 'xl_grid_column', FILTER_UNSAFE_RAW);
+						$xl_grid_gutter = filter_input( INPUT_POST, 'xl_grid_gutter', FILTER_UNSAFE_RAW);
 
-						$lg_grid_column = filter_input( INPUT_POST, 'lg_grid_column', FILTER_SANITIZE_STRING);
-						$lg_grid_gutter = filter_input( INPUT_POST, 'lg_grid_gutter', FILTER_SANITIZE_STRING);
+						$lg_grid_column = filter_input( INPUT_POST, 'lg_grid_column', FILTER_UNSAFE_RAW);
+						$lg_grid_gutter = filter_input( INPUT_POST, 'lg_grid_gutter', FILTER_UNSAFE_RAW);
 
-						$md_grid_column = filter_input( INPUT_POST, 'md_grid_column', FILTER_SANITIZE_STRING);
-						$md_grid_gutter = filter_input( INPUT_POST, 'md_grid_gutter', FILTER_SANITIZE_STRING);
+						$md_grid_column = filter_input( INPUT_POST, 'md_grid_column', FILTER_UNSAFE_RAW);
+						$md_grid_gutter = filter_input( INPUT_POST, 'md_grid_gutter', FILTER_UNSAFE_RAW);
 
-						$sm_grid_column = filter_input( INPUT_POST, 'sm_grid_column', FILTER_SANITIZE_STRING);
-						$sm_grid_gutter = filter_input( INPUT_POST, 'sm_grid_gutter', FILTER_SANITIZE_STRING);
+						$sm_grid_column = filter_input( INPUT_POST, 'sm_grid_column', FILTER_UNSAFE_RAW);
+						$sm_grid_gutter = filter_input( INPUT_POST, 'sm_grid_gutter', FILTER_UNSAFE_RAW);
 
-						$xs_grid_column = filter_input( INPUT_POST, 'xs_grid_column', FILTER_SANITIZE_STRING);
-						$xs_grid_gutter = filter_input( INPUT_POST, 'xs_grid_gutter', FILTER_SANITIZE_STRING);
+						$xs_grid_column = filter_input( INPUT_POST, 'xs_grid_column', FILTER_UNSAFE_RAW);
+						$xs_grid_gutter = filter_input( INPUT_POST, 'xs_grid_gutter', FILTER_UNSAFE_RAW);
 
 						$typeSettings = [
 							'img_size' => $img_size,
@@ -436,20 +436,20 @@ class Post_Selector_Admin_Ajax {
 						];
 						break;
 					case '3':
-						$xl_column = filter_input( INPUT_POST, 'xl_column', FILTER_SANITIZE_STRING);
-						$xl_gutter = filter_input( INPUT_POST, 'xl_gutter', FILTER_SANITIZE_STRING);
+						$xl_column = filter_input( INPUT_POST, 'xl_column', FILTER_UNSAFE_RAW);
+						$xl_gutter = filter_input( INPUT_POST, 'xl_gutter', FILTER_UNSAFE_RAW);
 
-						$lg_column = filter_input( INPUT_POST, 'lg_column', FILTER_SANITIZE_STRING);
-						$lg_gutter = filter_input( INPUT_POST, 'lg_gutter', FILTER_SANITIZE_STRING);
+						$lg_column = filter_input( INPUT_POST, 'lg_column', FILTER_UNSAFE_RAW);
+						$lg_gutter = filter_input( INPUT_POST, 'lg_gutter', FILTER_UNSAFE_RAW);
 
-						$md_column = filter_input( INPUT_POST, 'md_column', FILTER_SANITIZE_STRING);
-						$md_gutter = filter_input( INPUT_POST, 'md_gutter', FILTER_SANITIZE_STRING);
+						$md_column = filter_input( INPUT_POST, 'md_column', FILTER_UNSAFE_RAW);
+						$md_gutter = filter_input( INPUT_POST, 'md_gutter', FILTER_UNSAFE_RAW);
 
-						$sm_column = filter_input( INPUT_POST, 'sm_column', FILTER_SANITIZE_STRING);
-						$sm_gutter = filter_input( INPUT_POST, 'sm_gutter', FILTER_SANITIZE_STRING);
+						$sm_column = filter_input( INPUT_POST, 'sm_column', FILTER_UNSAFE_RAW);
+						$sm_gutter = filter_input( INPUT_POST, 'sm_gutter', FILTER_UNSAFE_RAW);
 
-						$xs_column = filter_input( INPUT_POST, 'xs_column', FILTER_SANITIZE_STRING);
-						$xs_gutter = filter_input( INPUT_POST, 'xs_gutter', FILTER_SANITIZE_STRING);
+						$xs_column = filter_input( INPUT_POST, 'xs_column', FILTER_UNSAFE_RAW);
+						$xs_gutter = filter_input( INPUT_POST, 'xs_gutter', FILTER_UNSAFE_RAW);
 
 						$typeSettings = [
 							'img_size'  => $img_size,
@@ -521,7 +521,7 @@ class Post_Selector_Admin_Ajax {
 			case 'get_galerie_data':
 
 				$id   = filter_input( INPUT_POST, 'id', FILTER_VALIDATE_INT );
-				$type = filter_input( INPUT_POST, 'type', FILTER_SANITIZE_STRING);
+				$type = filter_input( INPUT_POST, 'type', FILTER_UNSAFE_RAW);
 				$responseJson->status = true;
 				$responseJson->type = $type;
 
@@ -584,7 +584,7 @@ class Post_Selector_Admin_Ajax {
 
 			case 'delete_image':
 				$id   = filter_input( INPUT_POST, 'id', FILTER_VALIDATE_INT );
-				$responseJson->type   = filter_input( INPUT_POST, 'type', FILTER_SANITIZE_STRING );
+				$responseJson->type   = filter_input( INPUT_POST, 'type', FILTER_UNSAFE_RAW );
 				if(!$id){
 					$responseJson->msg = 'Ein Fehler ist aufgetreten!';
 					$responseJson->status = false;
@@ -597,10 +597,10 @@ class Post_Selector_Admin_Ajax {
 				break;
 
 			case 'add_galerie_image':
-				$type   = filter_input( INPUT_POST, 'type', FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_HIGH );
-				$record->img_title   = filter_input( INPUT_POST, 'img_title', FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_HIGH );
-				$record->img_beschreibung   = filter_input( INPUT_POST, 'img_beschreibung', FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_HIGH );
-				$record->img_caption   = filter_input( INPUT_POST, 'img_caption', FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_HIGH );
+				$type   = filter_input( INPUT_POST, 'type', FILTER_UNSAFE_RAW );
+				$record->img_title   = filter_input( INPUT_POST, 'img_title', FILTER_UNSAFE_RAW );
+				$record->img_beschreibung   = filter_input( INPUT_POST, 'img_beschreibung', FILTER_UNSAFE_RAW );
+				$record->img_caption   = filter_input( INPUT_POST, 'img_caption', FILTER_UNSAFE_RAW );
 
 				switch ($type){
 					case 'insert':
@@ -618,13 +618,13 @@ class Post_Selector_Admin_Ajax {
 							$responseJson->status = false;
 							return $responseJson;
 						}
-						filter_input(INPUT_POST, 'hover_aktiv', FILTER_SANITIZE_STRING) ? $record->hover_aktiv = true : $record->hover_aktiv = false;
-						filter_input(INPUT_POST, 'hover_title_aktiv', FILTER_SANITIZE_STRING) ? $record->hover_title_aktiv = true : $record->hover_title_aktiv = false;
-						filter_input(INPUT_POST, 'hover_beschreibung_aktiv', FILTER_SANITIZE_STRING) ? $record->hover_beschreibung_aktiv = true : $record->hover_beschreibung_aktiv = false;
-						filter_input(INPUT_POST, 'galerie_settings_aktiv', FILTER_SANITIZE_STRING) ? $record->galerie_settings_aktiv = true : $record->galerie_settings_aktiv = false;
-						filter_input(INPUT_POST, 'link_target', FILTER_SANITIZE_STRING) ? $record->link_target = true : $record->link_target = false;
+						filter_input(INPUT_POST, 'hover_aktiv', FILTER_UNSAFE_RAW) ? $record->hover_aktiv = true : $record->hover_aktiv = false;
+						filter_input(INPUT_POST, 'hover_title_aktiv', FILTER_UNSAFE_RAW) ? $record->hover_title_aktiv = true : $record->hover_title_aktiv = false;
+						filter_input(INPUT_POST, 'hover_beschreibung_aktiv', FILTER_UNSAFE_RAW) ? $record->hover_beschreibung_aktiv = true : $record->hover_beschreibung_aktiv = false;
+						filter_input(INPUT_POST, 'galerie_settings_aktiv', FILTER_UNSAFE_RAW) ? $record->galerie_settings_aktiv = true : $record->galerie_settings_aktiv = false;
+						filter_input(INPUT_POST, 'link_target', FILTER_UNSAFE_RAW) ? $record->link_target = true : $record->link_target = false;
 
-						$link = filter_input( INPUT_POST, 'link', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+						$link = filter_input( INPUT_POST, 'link', FILTER_UNSAFE_RAW );
 						$url = filter_input(INPUT_POST, "url", FILTER_VALIDATE_URL);
 
 						$record->is_link = false;
@@ -647,7 +647,7 @@ class Post_Selector_Admin_Ajax {
 
 			case 'delete_galerie':
 				$id   = filter_input( INPUT_POST, 'id', FILTER_VALIDATE_INT );
-				$type = filter_input( INPUT_POST, 'type', FILTER_SANITIZE_STRING );
+				$type = filter_input( INPUT_POST, 'type', FILTER_UNSAFE_RAW );
 				if(!$id || !$type){
 					$responseJson->msg = 'Ein Fehler ist aufgetreten!';
 					$responseJson->status = false;
@@ -665,7 +665,7 @@ class Post_Selector_Admin_Ajax {
 
 			case 'get_slider_data':
 				$id   = filter_input( INPUT_POST, 'id', FILTER_VALIDATE_INT );
-				$type = filter_input( INPUT_POST, 'type', FILTER_SANITIZE_STRING );
+				$type = filter_input( INPUT_POST, 'type', FILTER_UNSAFE_RAW );
 
 				$responseJson->status = true;
 				if ( $type == 'update' ) {
@@ -701,7 +701,7 @@ class Post_Selector_Admin_Ajax {
 
 			case 'delete_post_items':
 				$id   = filter_input( INPUT_POST, 'id', FILTER_VALIDATE_INT );
-				$type = filter_input( INPUT_POST, 'type', FILTER_SANITIZE_STRING );
+				$type = filter_input( INPUT_POST, 'type', FILTER_UNSAFE_RAW );
 
 				if ( ! $id || ! $type ) {
 					$responseJson->msg = 'Ein Fehler ist aufgetreten!';
@@ -826,7 +826,7 @@ class Post_Selector_Admin_Ajax {
 
 			case'update_ps_settings':
 				$responseJson->spinner = true;
-				$userRole   = filter_input( INPUT_POST, 'user_role', FILTER_SANITIZE_STRING );
+				$userRole   = filter_input( INPUT_POST, 'user_role', FILTER_UNSAFE_RAW );
 				if(!$userRole){
 					$responseJson->msg = 'Es wurden keine Daten übertragen!';
 					return $responseJson;
