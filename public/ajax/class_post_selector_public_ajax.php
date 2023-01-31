@@ -79,7 +79,7 @@ class Post_Selector_Public_Ajax {
 		$this->method     = '';
 		if ( isset( $_POST['daten'] ) ) {
 			$this->data   = $_POST['daten'];
-			$this->method = filter_var( $this->data['method'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+			$this->method = filter_var( $this->data['method'], FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
 		}
 
 		if ( ! $this->method ) {
@@ -104,7 +104,7 @@ class Post_Selector_Public_Ajax {
 		switch ( $this->method ) {
 			case 'get_slider_settings':
 				$id   = filter_input( INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT );
-				$rand = filter_input( INPUT_POST, 'rand', FILTER_SANITIZE_STRING );
+				$rand = filter_input( INPUT_POST, 'rand', FILTER_UNSAFE_RAW );
 
 				if ( ! $id ) {
 					return $responseJson;

@@ -107,7 +107,7 @@ class Register_License_Ajax {
 		$this->method     = '';
 		if ( isset( $_POST['daten'] ) ) {
 			$this->data   = $_POST['daten'];
-			$this->method = filter_var( $this->data['method'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+			$this->method = filter_var( $this->data['method'], FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
 		}
 
 		if ( ! $this->method ) {
@@ -125,8 +125,8 @@ class Register_License_Ajax {
 
 		switch ( $this->method ) {
 			case 'save_license_data':
-				$client_id = filter_input( INPUT_POST, 'client_id', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-				$client_secret = filter_input( INPUT_POST, 'client_secret', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+				$client_id = filter_input( INPUT_POST, 'client_id', FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
+				$client_secret = filter_input( INPUT_POST, 'client_secret', FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
 				if(strlen($client_id) !== 12 || strlen($client_secret) !== 36) {
 					$responseJson->status        = false;
 					$responseJson->msg = 'Client ID oder Client secret sind nicht bekannt!';

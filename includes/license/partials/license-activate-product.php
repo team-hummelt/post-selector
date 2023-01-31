@@ -2,14 +2,14 @@
 /**
  * Provide a License area view for the plugin
  *
- * This file is used to markup the admin-facing aspects of the plugin.
+ * This file is used to mark up the admin-facing aspects of the plugin.
  *
  * @link       https://wwdh.de
  * @since      1.0.0
  */
 
 defined( 'ABSPATH' ) or die();
-$code         = filter_input( INPUT_GET, 'code', FILTER_SANITIZE_STRING );
+$code         = filter_input( INPUT_GET, 'code', FILTER_UNSAFE_RAW );
 $errMsg       = '';
 $aktivShow    = 'd-none';
 $registerShow = '';

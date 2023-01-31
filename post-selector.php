@@ -23,8 +23,8 @@
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Requires PHP:      7.4
  * Requires at least: 5.6
- * Tested up to:      5.9
- * Stable tag:        2.0.0
+ * Tested up to:      6.1.1
+ * Stable tag:        2.0.1
 
  */
 
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 const POST_SELECTOR_PLUGIN_DB_VERSION = '1.0.1';
 const POST_SELECTOR_MIN_PHP_VERSION = '7.4';
-const POST_SELECTOR_MIN_WP_VERSION = '5.7';
+const POST_SELECTOR_MIN_WP_VERSION = '5.6';
 
 //PLUGIN ROOT PATH
 define('POST_SELECTOR_PLUGIN_DIR', dirname(__FILE__));

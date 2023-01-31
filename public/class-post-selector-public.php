@@ -114,7 +114,8 @@ class Post_Selector_Public {
 
 		//if nicht Install Starter Theme
 		$ifHupaStarter = wp_get_theme( 'hupa-starter' );
-		if ( ! $ifHupaStarter->exists() ) {
+        $ifHupaStarter2 = wp_get_theme('hupa-starter-v2');
+		if ( ! $ifHupaStarter2->exists() ) {
 			// TODO Bootstrap CSS
 			wp_enqueue_style(
 				'post-selector-two-bootstrap',
@@ -155,7 +156,7 @@ class Post_Selector_Public {
 		 */
 
 		$modificated = date( 'YmdHi', filemtime( plugin_dir_path( dirname( __FILE__ ) ) . 'public/js/tools/splide.min.js' ) );
-		$modificated = date( 'YmdHi', filemtime( plugin_dir_path( dirname( __FILE__ ) ) . 'public/js/bs/bootstrap.bundle.min.js' ) );
+
 		$modificated = date( 'YmdHi', filemtime( plugin_dir_path( dirname( __FILE__ ) ) . 'public/js/tools/lightbox/blueimp-gallery.min.js' ) );
 		$modificated = date( 'YmdHi', filemtime( plugin_dir_path( dirname( __FILE__ ) ) . 'public/js/tools/imagesloaded.pkgd.min.js' ) );
 		$modificated = date( 'YmdHi', filemtime( plugin_dir_path( dirname( __FILE__ ) ) . 'public/js/tools/masonry.pkgd.min.js' ) );
@@ -163,8 +164,9 @@ class Post_Selector_Public {
 		$modificated = date( 'YmdHi', filemtime( plugin_dir_path( dirname( __FILE__ ) ) . 'public/js/tools/post-selector-splide.js' ) );
 
 		$ifHupaStarter = wp_get_theme( 'hupa-starter' );
-		if ( ! $ifHupaStarter->exists() ) {
-
+        $ifHupaStarter2 = wp_get_theme('hupa-starter-v2');
+		if ( ! $ifHupaStarter2->exists() ) {
+            $modificated = date( 'YmdHi', filemtime( plugin_dir_path( dirname( __FILE__ ) ) . 'public/js/bs/bootstrap.bundle.min.js' ) );
 			// TODO Bootstrap JS
 			wp_enqueue_script( 'gutenberg-post-selector-two-bs',
 				plugin_dir_url( __FILE__ ) . 'js/bs/bootstrap.bundle.min.js', array(),

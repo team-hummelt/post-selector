@@ -3,8 +3,8 @@ Contributors: jwiecker
 Tags: Gallery, Post-Filter, Slider, Category Filter
 Requires at least: 5.6
 Requires PHP: 7.4
-Version: 2.0.0
-Tested up to: 5.9
+Version: 2.0.1
+Tested up to: 6.1.1
 Stable tag: 2.0.0
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -33,6 +33,8 @@ Follow the steps below to install the plugin
 1. Activate the plugin via the menu `Plugins` in WordPress.
 
 == Changelog ==
+= 2.0.1 =
+* PHP 8.1 Kompatibel
 
 = 2.0.0 =
 * Plugin core completely revised
