@@ -114,7 +114,7 @@ class Post_Selector_Public {
 
 		//if nicht Install Starter Theme
 		$ifHupaStarter = wp_get_theme( 'hupa-starter' );
-        $ifHupaStarter2 = wp_get_theme('hupa-starter-v2');
+        $ifHupaStarter2 = wp_get_theme('starter-theme-v2');
 		if ( ! $ifHupaStarter2->exists() ) {
 			// TODO Bootstrap CSS
 			wp_enqueue_style(
@@ -164,7 +164,7 @@ class Post_Selector_Public {
 		$modificated = date( 'YmdHi', filemtime( plugin_dir_path( dirname( __FILE__ ) ) . 'public/js/tools/post-selector-splide.js' ) );
 
 		$ifHupaStarter = wp_get_theme( 'hupa-starter' );
-        $ifHupaStarter2 = wp_get_theme('hupa-starter-v2');
+        $ifHupaStarter2 = wp_get_theme('starter-theme-v2');
 		if ( ! $ifHupaStarter2->exists() ) {
             $modificated = date( 'YmdHi', filemtime( plugin_dir_path( dirname( __FILE__ ) ) . 'public/js/bs/bootstrap.bundle.min.js' ) );
 			// TODO Bootstrap JS
